@@ -4,7 +4,7 @@ import HtmlTestRunner
 
 def suite():
     loader = unittest.TestLoader()
-    suites = loader.discover("../tests")
+    suites = loader.discover("../test_cases")
     return suites
 
 # TODO: add argparser and parametrize full run to be able to run any list of tests,

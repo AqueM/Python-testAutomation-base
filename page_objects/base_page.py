@@ -4,6 +4,7 @@ from selenium.common.exceptions import *
 
 
 class BasePage(object):
+    # site-wide methods inherited by other page objects
 
     def __init__(self, driver):
         self.driver = driver
@@ -38,3 +39,9 @@ class BasePage(object):
 
     def wait_for_element_disappear(self, element_by):
         WebDriverWait(self.driver, 10).until_not(ec.presence_of_all_elements_located(element_by))
+
+    def assert_error_text(self, error, text):
+        self.wait_for_element(error)
+        error_displayed = self.driver.find_element(*error).text
+        assert text in error_displayed,\
+            "Expected error message to include '" + text + "' but it was '" + error_displayed + "'."

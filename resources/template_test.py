@@ -2,6 +2,7 @@ import unittest
 from datetime import datetime
 
 from selenium import webdriver
+from resources.test_data.getTestData import get_valid_user
 
 
 class TestTemplate(unittest.TestCase):
@@ -11,6 +12,7 @@ class TestTemplate(unittest.TestCase):
         # TODO: manage webdriver choice with a variable in argparser
         # self.driver = webdriver.Chrome()
         self.driver.maximize_window()
+        self.user = get_valid_user()
 
     def tearDown(self):
         # NOTE: In addCleanup, the first in, is executed last.
