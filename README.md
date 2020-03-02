@@ -1,4 +1,4 @@
-#Requirements
+# Requirements
 * make sure you have Python 3.7(+) 
 * all libraries mentioned in requirements.txt
 
