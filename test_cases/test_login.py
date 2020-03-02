@@ -21,7 +21,7 @@ class TestLogin(TestTemplate):
         self.home = HomePage(driver)
 
         self.login.open_home_and_login("invalidlogin@test.com", self.user[1], False)
-        self.login.assert_error_text(self.login.error, "Bad credentials. Please login again.")
+        self.login.assert_error_text(self.login.error, "Authentication failed.")
 
 
 if __name__ == "__main__":

@@ -44,7 +44,7 @@ class LoginPage(BasePage):
         self.input_password(password)
         self.click_login()
         if valid_login:
-            self.wait_for_title("My account - My store")
+            self.wait_for_title("My account - My Store")
             # above must be used to pass in the state as is, because page object for My Account page doesn't exist
             # self.wait_for_title(account.title)
 
